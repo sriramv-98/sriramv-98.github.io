@@ -1,0 +1,35 @@
+# Allow search engines to crawl and index this site.
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block common AI training/scraping crawlers.
+# Note: robots.txt is a request, not enforcement — pair this with
+# bot-blocking at the DNS/CDN layer (e.g. Cloudflare) once the domain is live.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+Sitemap: https://sriramv-98.github.io/sitemap-index.xml

@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const experience = [
+  {
+    role: 'Software Dev Engineer',
+    org: 'Amazon',
+    period: 'August 2025 - Present',
+    description:
+      'Building reliable and secure distributed systems at scale to drive Financial Risk Mitigation solutions.',
+  },
+  {
+    role: 'Software Engineer II',
+    org: 'Cisco',
+    period: 'November 2021 - July 2023',
+    description:
+      'Took ownership as Technical POC of 3 full stack applications built on the Spring Boot - Angular JS stack with 20K+ active users. Executed bi-weekly time-sensitive production releases containing enhancements and bug fixes (6 releases each quarter), keeping the applications’ 97% SLA with the business.',
+  },
+  {
+    role: 'Software Engineer',
+    org: 'Cisco',
+    period: 'August 2020 - October 2021',
+    description:
+      'Individual contributor on the IT team building in-house full stack web applications for the company. Worked on 3 full stack projects and the Workday Extend ERP during this role.',
+  },
+];
+
+const education = [
+  {
+    school: 'University of Southern California',
+    degree: 'Master of Science',
+    field: 'Computer Science',
+    period: 'August 2023 - May 2025',
+  },
+  {
+    school: 'The National Institute of Engineering, India',
+    degree: 'Bachelor of Engineering',
+    field: 'Information Science & Engineering',
+    period: 'August 2016 - August 2020',
+  },
+];
+---
+
+<Layout
+  title="Home"
+  description="Sriram Venkatesh — software engineer at Amazon, sharing weekly learnings and building things."
+>
+  <Nav />
+
+  <main class="mx-auto max-w-4xl px-6">
+    <!-- Hero / About -->
+    <section id="about" class="flex min-h-[70vh] flex-col justify-center py-20">
+      <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+        Sriram <span class="text-indigo-600">Venkatesh</span>
+      </h1>
+      <p class="mt-2 text-slate-500">Seattle, WA</p>
+
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-slate-700">
+        Software engineer at Amazon, building distributed systems. Master's in Computer
+        Science from USC, with prior experience across Amazon, Wayfair, and Cisco.
+      </p>
+
+      <!--
+        TODO (Sriram): Add a paragraph here describing what this website is about
+        (portfolio + weekly learnings blog). Replace the placeholder <p> below.
+      -->
+      <p class="mt-6 max-w-2xl rounded-lg border border-dashed border-slate-300 bg-slate-50 p-4 text-slate-400 italic">
+        [Add your paragraph about what this website is here.]
+      </p>
+
+      <div class="mt-8 flex gap-4">
+        <a
+          href="https://www.linkedin.com/in/sriram-venkatesh98/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-md border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-400 hover:bg-slate-50"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/sriramv-98"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-md border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-400 hover:bg-slate-50"
+        >
+          GitHub
+        </a>
+        <a
+          href="/blog"
+          class="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-indigo-500"
+        >
+          Read the blog
+        </a>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="py-16">
+      <h2 class="text-2xl font-bold text-slate-900">Experience</h2>
+      <div class="mt-8 space-y-10">
+        {experience.map((item) => (
+          <div class="flex flex-col justify-between gap-1 sm:flex-row sm:gap-8">
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900">{item.role}</h3>
+              <p class="text-indigo-600">{item.org}</p>
+              <p class="mt-2 max-w-2xl text-slate-600">{item.description}</p>
+            </div>
+            <p class="whitespace-nowrap text-sm text-slate-500 sm:text-right">{item.period}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="py-16">
+      <h2 class="text-2xl font-bold text-slate-900">Education</h2>
+      <div class="mt-8 space-y-10">
+        {education.map((item) => (
+          <div class="flex flex-col justify-between gap-1 sm:flex-row sm:gap-8">
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900">{item.school}</h3>
+              <p class="text-indigo-600">{item.degree}</p>
+              <p class="text-slate-600">{item.field}</p>
+            </div>
+            <p class="whitespace-nowrap text-sm text-slate-500 sm:text-right">{item.period}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
