@@ -4,6 +4,12 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  /* Muted pastel accents — used sparingly for chips, CTAs and hover states */
+  --color-accent: #f3b4ae;
+  --color-accent-dark: #e8938c;
+  --color-accent-soft: #fbe3e0;
+  --color-mint: #c3e4d8;
 }
 
 /* Neobrutalist building blocks: thick black borders, hard offset shadows,

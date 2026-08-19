@@ -16,7 +16,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   <Nav />
 
   <main class="mx-auto max-w-4xl px-6 py-16">
-    <h1 class="font-display inline-block border-2 border-black bg-white px-3 py-1 text-3xl font-bold uppercase">
+    <h1 class="font-display inline-block border-2 border-black bg-accent px-3 py-1 text-3xl font-bold uppercase">
       Blog
     </h1>
     <p class="mt-4 max-w-2xl text-black/80">
@@ -32,12 +32,12 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
       {posts.map((post) => (
         <a
           href={`/blog/${post.id}/`}
-          class="shadow-brutal group block border-2 border-black bg-white p-6 transition-transform hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+          class="shadow-brutal group block border-2 border-black bg-white p-6 transition-transform hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-accent-soft hover:shadow-none"
         >
           <h2 class="text-xl font-bold text-black">
             {post.data.title}
           </h2>
-          <p class="mt-1 text-xs font-bold uppercase text-black/50">
+          <p class="mt-1 inline-block border-2 border-black bg-mint/50 px-1.5 py-0.5 text-xs font-bold uppercase text-black">
             {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </p>
           <p class="mt-2 text-black/80">{post.data.description}</p>
