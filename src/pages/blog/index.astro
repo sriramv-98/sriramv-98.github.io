@@ -37,7 +37,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
           <h2 class="text-xl font-bold text-black">
             {post.data.title}
           </h2>
-          <p class="mt-1 inline-block border-2 border-black bg-mint/50 px-1.5 py-0.5 text-xs font-bold uppercase text-black">
+          <p class="mt-1 text-xs font-bold uppercase text-black/50">
             {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </p>
           <p class="mt-2 text-black/80">{post.data.description}</p>
