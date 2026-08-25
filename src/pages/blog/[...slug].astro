@@ -31,8 +31,16 @@ const { Content } = await render(post);
       {post.data.title}
     </h1>
     <p class="mt-2 text-xs font-bold uppercase text-black/50">
-      {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
     </p>
+
+    {post.data.image && (
+      <img
+        src={post.data.image}
+        alt={post.data.imageAlt ?? ''}
+        class="shadow-brutal mt-6 w-full max-w-xs border-2 border-black bg-white object-contain p-4"
+      />
+    )}
 
     <article class="shadow-brutal prose prose-neutral mt-8 max-w-none border-2 border-black bg-white p-8">
       <Content />
